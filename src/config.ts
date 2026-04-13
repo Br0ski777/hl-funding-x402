@@ -39,6 +39,52 @@ Do NOT use for historical funding data -- use hyperliquid_get_funding_history in
         },
         required: [],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "totalMarkets": {
+              "type": "number",
+              "description": "Total perp markets"
+            },
+            "sort": {
+              "type": "string",
+              "description": "Sort order used"
+            },
+            "timestamp": {
+              "type": "string"
+            },
+            "rates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "coin": {
+                    "type": "string"
+                  },
+                  "fundingRate": {
+                    "type": "number"
+                  },
+                  "annualizedRate": {
+                    "type": "number"
+                  },
+                  "premium": {
+                    "type": "number"
+                  },
+                  "openInterest": {
+                    "type": "number"
+                  },
+                  "markPrice": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "totalMarkets",
+            "rates"
+          ]
+        },
     },
     {
       method: "POST",
@@ -78,6 +124,67 @@ Do NOT use for current rates across all markets -- use hyperliquid_get_funding_r
         },
         required: ["coin"],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "coin": {
+              "type": "string",
+              "description": "Coin queried"
+            },
+            "hours": {
+              "type": "number",
+              "description": "Lookback period"
+            },
+            "timestamp": {
+              "type": "string"
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "time": {
+                    "type": "string"
+                  },
+                  "fundingRate": {
+                    "type": "number"
+                  },
+                  "annualizedRate": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "avgRate": {
+                  "type": "number"
+                },
+                "avgAnnualized": {
+                  "type": "number"
+                },
+                "minRate": {
+                  "type": "number"
+                },
+                "maxRate": {
+                  "type": "number"
+                },
+                "stdDev": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "required": [
+            "coin",
+            "entries",
+            "summary"
+          ]
+        },
     },
     {
       method: "POST",
@@ -112,6 +219,54 @@ Do NOT use for historical funding trends -- use hyperliquid_get_funding_history 
         },
         required: [],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "threshold": {
+              "type": "number",
+              "description": "Min rate threshold used"
+            },
+            "totalOpportunities": {
+              "type": "number"
+            },
+            "longOpportunities": {
+              "type": "number"
+            },
+            "shortOpportunities": {
+              "type": "number"
+            },
+            "opportunities": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "coin": {
+                    "type": "string"
+                  },
+                  "fundingRate": {
+                    "type": "number"
+                  },
+                  "annualizedRate": {
+                    "type": "number"
+                  },
+                  "direction": {
+                    "type": "string"
+                  },
+                  "openInterest": {
+                    "type": "number"
+                  },
+                  "markPrice": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "totalOpportunities",
+            "opportunities"
+          ]
+        },
     },
   ],
 };
