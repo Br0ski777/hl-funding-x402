@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "sse",
-      "url": "https://hl-funding-x402-production.up.railway.app/mcp"
+      "url": "https://hl-funding.api.klymax402.com/mcp"
     }
   ]
 }
