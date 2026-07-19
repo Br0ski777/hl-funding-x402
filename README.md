@@ -37,9 +37,9 @@ Any x402-aware client ([`@x402/fetch`](https://www.npmjs.com/package/@x402/fetch
 
 | Tool | Method | Path | Price | Description |
 |---|---|---|---|---|
-| `hyperliquid_get_funding_rates` | POST | `/api/rates` | $0.002 | Current funding rates for all 229 Hyperliquid perp markets sorted by rate |
-| `hyperliquid_get_funding_history` | POST | `/api/history` | $0.002 | Historical funding rate data for a specific Hyperliquid coin |
-| `hyperliquid_find_funding_arb` | POST | `/api/arb` | $0.003 | Find funding rate arbitrage opportunities -- coins with extreme positive or negative rates |
+| `hyperliquid_get_funding_rates` | POST | `/api/rates` | $0.005 | Current funding rates for all 229 Hyperliquid perp markets sorted by rate |
+| `hyperliquid_get_funding_history` | POST | `/api/history` | $0.005 | Historical funding rate data for a specific Hyperliquid coin |
+| `hyperliquid_find_funding_arb` | POST | `/api/arb` | $0.008 | Find funding rate arbitrage opportunities -- coins with extreme positive or negative rates |
 
 ### `hyperliquid_get_funding_rates`
 
