@@ -9,7 +9,7 @@ export const API_CONFIG: ApiConfig = {
     {
       method: "POST",
       path: "/api/rates",
-      price: "$0.002",
+      price: "$0.005",
       description: "Current funding rates for all 229 Hyperliquid perp markets sorted by rate",
       toolName: "hyperliquid_get_funding_rates",
       toolDescription:
@@ -89,7 +89,7 @@ Do NOT use for historical funding data -- use hyperliquid_get_funding_history in
     {
       method: "POST",
       path: "/api/history",
-      price: "$0.002",
+      price: "$0.005",
       description: "Historical funding rate data for a specific Hyperliquid coin",
       toolName: "hyperliquid_get_funding_history",
       toolDescription:
@@ -189,7 +189,7 @@ Do NOT use for current rates across all markets -- use hyperliquid_get_funding_r
     {
       method: "POST",
       path: "/api/arb",
-      price: "$0.003",
+      price: "$0.008",
       description: "Find funding rate arbitrage opportunities -- coins with extreme positive or negative rates",
       toolName: "hyperliquid_find_funding_arb",
       toolDescription:
