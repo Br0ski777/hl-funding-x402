@@ -206,7 +206,7 @@ export function registerRoutes(app: Hono) {
 
   // POST /api/arb — Find funding arbitrage opportunities
   app.post("/api/arb", async (c) => {
-    await tryRequirePayment(0.003);
+    await tryRequirePayment(0.002);
     try {
       const body = await c.req.json().catch(() => ({}));
       const threshold = (body as any).threshold || 0.0001; // 0.01% per 8h
